@@ -42,10 +42,10 @@ public class Utils {
 
     public static String formatToHtml(Object o, boolean withEmptyWord) {
         if (o == null) {
-            return withEmptyWord ? "[empty]" : "";
+            return withEmptyWord ? "<span style=\"color:silver;\">[empty]</span>" : "";
         }
         if (o instanceof String && (((String) o)).isEmpty()) {
-            return withEmptyWord ? "[empty]" : "";
+            return withEmptyWord ? "<span style=\"color:silver;\">[empty]</span>" : "";
         }
         if (o instanceof Boolean) {
             Boolean b = (Boolean) o;

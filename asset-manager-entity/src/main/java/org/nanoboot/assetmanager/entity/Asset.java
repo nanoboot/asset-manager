@@ -57,6 +57,9 @@ public class Asset {
         sb.append(priceValue /100);
         sb.append(".");
         String priceTimesHundredStr = priceValue.toString();
+        if(priceValue == 0) {
+            priceTimesHundredStr = priceTimesHundredStr + ".00";
+        }
         sb.append(priceTimesHundredStr.substring(priceTimesHundredStr.length() -2));
         if(priceCurrency != null && !priceCurrency.isBlank()) {
             sb.append(" ").append(priceCurrency);

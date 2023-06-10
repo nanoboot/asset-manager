@@ -69,9 +69,14 @@
         }
     </style>
     <%
-        final String EMPTY = "[empty]";
+        final String EMPTY = "<span style=\"color:silver;\">[empty]</span>";
         String number = request.getParameter("number");
+        String path1 = request.getParameter("path1");
+        String path2 = request.getParameter("path2");
+        String path3 = request.getParameter("path3");
+        String path4 = request.getParameter("path4");
         String pageNumber = request.getParameter("pageNumber");
+        String pageSize = request.getParameter("pageSize");
         String previousNextPage = request.getParameter("PreviousNextPage");
                 if (previousNextPage != null && !previousNextPage.isEmpty()) {
             if (previousNextPage.equals("Previous page")) {
@@ -90,6 +95,10 @@
 
         <label for="pageNumber">Page </label><input type="text" name="pageNumber" value="<%=pageNumberInt%>" size="4" style="margin-right:10px;">
         <label for="number">Number </label><input type="text" name="number" value="<%=number != null ? number : ""%>" size="5" style="margin-right:10px;">
+        <label for="number">Path 1 </label><input type="text" name="path1" value="<%=path1 != null ? path1 : ""%>" style="margin-right:10px;">
+        <label for="number">Path 2 </label><input type="text" name="path2" value="<%=path2 != null ? path2 : ""%>" style="margin-right:10px;">
+        <label for="number">Path 3 </label><input type="text" name="path3" value="<%=path3 != null ? path3 : ""%>" style="margin-right:10px;">
+        <label for="number">Path 4 </label><input type="text" name="path4" value="<%=path4 != null ? path4 : ""%>" style="margin-right:10px;">
 
         <input type="submit" value="Filter" style="margin-left:20px;height:40px;">
         <br>
@@ -102,8 +111,9 @@
     <%
         List<Asset> assets = assetRepo.list(
                 pageNumberInt,
-                10,
-                number == null || number.isEmpty() ? null : Integer.valueOf(number)
+                pageSize == null || pageSize.isBlank() ? 10 : Integer.valueOf(pageSize),
+                number == null || number.isEmpty() ? null : Integer.valueOf(number),
+                path1, path2, path3, path4
                 
         );
 

@@ -33,8 +33,8 @@ public class AssetRepoWrapper implements AssetRepo {
         this.internalAssetRepo = assetRepo;
     }
     @Override
-    public List<Asset> list(int pageNumber, int pageSize, Integer number) {
-        return internalAssetRepo.list(pageNumber, pageSize, number);
+    public List<Asset> list(int pageNumber, int pageSize, Integer number, String path1, String path2, String path3, String path4) {
+        return internalAssetRepo.list(pageNumber, pageSize, number, path1, path2, path3, path4);
     }
 
     @Override

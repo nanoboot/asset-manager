@@ -36,7 +36,7 @@ public class AssetRepoImplMock implements AssetRepo {
     private int nextNumber = 1;
 
     @Override
-    public List<Asset> list(int pageNumber, int pageSize, Integer number) {
+    public List<Asset> list(int pageNumber, int pageSize, Integer number, String path1, String path2, String path3, String path4) {
         if (internalList.isEmpty()) {
             for(int i = 0;i< 50;i++) {
             internalList.add(

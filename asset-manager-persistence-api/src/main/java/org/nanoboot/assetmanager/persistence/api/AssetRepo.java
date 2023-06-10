@@ -27,7 +27,7 @@ import org.nanoboot.assetmanager.entity.Asset;
  * @author robertvokac
  */
 public interface AssetRepo {
-    List<Asset> list(int pageNumber,int pageSize, Integer number);
+    List<Asset> list(int pageNumber,int pageSize, Integer number, String path1, String path2, String path3, String path4);
         
     int create(Asset asset);
     Asset read(Integer number);
