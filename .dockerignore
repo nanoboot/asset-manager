@@ -1,0 +1,13 @@
+asset-manager.confpath/*
+
+
+# ignore .git and .cache folders
+.git
+.cache
+
+# ignore IntelliJ project files
+*.iml
+.idea/**
+
+# ignore Maven target folders
+target

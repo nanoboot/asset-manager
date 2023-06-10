@@ -1,0 +1,11 @@
+version: "2.4"
+
+services:
+  octagon:
+    build:
+      context: .
+    ports:
+      - "8081:8080"
+    volumes:
+      - {}/asset-manager.confpath
+
