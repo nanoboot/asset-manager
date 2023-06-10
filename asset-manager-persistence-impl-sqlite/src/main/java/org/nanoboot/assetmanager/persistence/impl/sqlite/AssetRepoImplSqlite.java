@@ -333,7 +333,12 @@ public class AssetRepoImplSqlite implements AssetRepo {
 
             //
             //
-            stmt.setLong(++i, asset.getPriceValue());
+            if (asset.getPriceValue() == null) {
+                stmt.setNull(++i, java.sql.Types.NUMERIC);
+            } else {
+                stmt.setLong(++i, asset.getPriceValue());
+            }
+
             stmt.setString(++i, asset.getPriceCurrency());
             //
             stmt.setString(++i, asset.getNote());

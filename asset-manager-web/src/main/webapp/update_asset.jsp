@@ -93,19 +93,19 @@
             </tr>
             <tr>
                 <td><label for="path1">Path 1:</label></td>
-                <td><input type="text" name="path1" value="<%=asset.getPath1()%>"></td>
+                <td><input type="text" name="path1" value="<%=asset.getPath1() == null ? "" : asset.getPath1()%>"></td>
             </tr>
             <tr>
                 <td><label for="path2">Path 2:</label></td>
-                <td><input type="text" name="path2" value="<%=asset.getPath2()%>"></td>
+                <td><input type="text" name="path2" value="<%=asset.getPath2() == null ? "" : asset.getPath2()%>"></td>
             </tr>
             <tr>
                 <td><label for="path3">Path 3:</label></td>
-                <td><input type="text" name="path3" value="<%=asset.getPath3()%>"></td>
+                <td><input type="text" name="path3" value="<%=asset.getPath3() == null ? "" : asset.getPath3()%>"></td>
             </tr>
             <tr>
                 <td><label for="path4">Path 4:</label></td>
-                <td><input type="text" name="path4" value="<%=asset.getPath4()%>"></td>
+                <td><input type="text" name="path4" value="<%=asset.getPath4() == null ? "" : asset.getPath4()%>"></td>
             </tr>
             <tr>
                 <td><label for="name">Name <b style="color:red;font-size:130%;">*</b>:</label></td>
@@ -177,7 +177,7 @@
                 param_name,
                 param_alias,
                 param_since == null || param_since.isEmpty() ? null : new LocalDate(param_since),
-                param_priceValue == null ? null : (Long.valueOf(param_priceValue.replace("\\.",""))),
+                param_priceValue == null || param_priceValue.isBlank() ? null : (Long.valueOf(param_priceValue.replace("\\.",""))),
                 param_priceCurrency,
                 
                 param_note,
