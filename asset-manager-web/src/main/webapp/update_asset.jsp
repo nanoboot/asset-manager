@@ -121,7 +121,7 @@
             </tr>
             <tr>
                 <td><label for="priceValue">Price value</label></td>
-                <td><input type="text" name="priceValue" value="<%=asset.getPriceValue() == null ? "" : asset.getPriceValue()%>"></td>
+                <td><input type="text" name="priceValue" value="<%=asset.getPriceValue() == null ? "" : asset.getPriceAsString()%>"></td>
             </tr>
             <tr>
                 <td><label for="priceCurrency">Price currency</label></td>
@@ -177,7 +177,7 @@
                 param_name,
                 param_alias,
                 param_since == null || param_since.isEmpty() ? null : new LocalDate(param_since),
-                param_priceValue == null || param_priceValue.isBlank() ? null : (Long.valueOf(param_priceValue.replace("\\.",""))),
+                param_priceValue == null || param_priceValue.isBlank() ? null : Asset.convertPriceStringToPriceLong(param_priceValue),
                 param_priceCurrency,
                 
                 param_note,

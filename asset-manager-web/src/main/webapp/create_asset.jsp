@@ -162,7 +162,7 @@
                 param_name,
                 param_alias,
                 param_since == null || param_since.isEmpty() ? null : new LocalDate(param_since),
-                param_priceValue == null || param_priceValue.isEmpty()  ? null : (Long.valueOf(param_priceValue.replace("\\.",""))),
+                param_priceValue == null || param_priceValue.isEmpty()  ? null : Asset.convertPriceStringToPriceLong(param_priceValue),
                 param_priceCurrency,
                 
                 param_note,
