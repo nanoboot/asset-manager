@@ -52,10 +52,14 @@ public class Asset {
     private LocalDateTime addedOn;
 
     public Asset() {
-        
+
     }
 
     public String getPrettyPrice() {
+        return getPrettyPrice(true);
+    }
+
+    public String getPrettyPrice(boolean withCurrency) {
         if (priceValue == null) {
             return "";
         }
@@ -67,7 +71,7 @@ public class Asset {
             priceTimesHundredStr = priceTimesHundredStr + ".00";
         }
         sb.append(priceTimesHundredStr.substring(priceTimesHundredStr.length() - 2));
-        if (priceCurrency != null && !priceCurrency.isBlank()) {
+        if (withCurrency && priceCurrency != null && !priceCurrency.isBlank()) {
             sb.append(" ").append(priceCurrency);
         }
 
@@ -78,7 +82,7 @@ public class Asset {
         if (this.priceValue == null) {
             return null;
         }
-        if(priceValue == 0) {
+        if (priceValue == 0) {
             return "0.00";
         }
         String priceString = priceValue.toString();
@@ -86,15 +90,15 @@ public class Asset {
     }
 
     public static Long convertPriceStringToPriceLong(String priceString) {
-        priceString = priceString.replace(",",".");
+        priceString = priceString.replace(",", ".");
         if (!priceString.contains(".")) {
             return Long.parseLong(priceString) * 100l;
         }
-        if(priceString.charAt(priceString.length()-3) != '.') {
+        if (priceString.charAt(priceString.length() - 3) != '.') {
             throw new RuntimeException("Invalid format of price. The dot must be the third character from the end.");
         }
-        Long long1 = Long.valueOf(priceString.substring(0, priceString.length()-3));
-        Long long2 = Long.valueOf(priceString.substring(priceString.length()-2, priceString.length()));
+        Long long1 = Long.valueOf(priceString.substring(0, priceString.length() - 3));
+        Long long2 = Long.valueOf(priceString.substring(priceString.length() - 2, priceString.length()));
         return long1 * 100 + long2;
     }
 

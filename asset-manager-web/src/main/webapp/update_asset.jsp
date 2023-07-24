@@ -121,7 +121,7 @@
             </tr>
             <tr>
                 <td><label for="priceValue">Price value</label></td>
-                <td><input type="text" name="priceValue" value="<%=asset.getPriceValue() == null ? "" : asset.getPriceAsString()%>"></td>
+                <td><input type="text" name="priceValue" value="<%=asset.getPriceValue() == null ? "" : asset.getPrettyPrice(false)%>"></td>
             </tr>
             <tr>
                 <td><label for="priceCurrency">Price currency</label></td>
