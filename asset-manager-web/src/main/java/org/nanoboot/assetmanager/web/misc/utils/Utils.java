@@ -76,4 +76,27 @@ public class Utils {
         return canUpdateAttribute.equals("true");
 
     }
+        public static boolean cannotRead(HttpServletRequest request) {
+        return !canRead(request);
+    }
+        public static boolean canRead(HttpServletRequest request) {
+        //if(true)return true;
+
+        String allHaveToLogin = System.getProperty("asset-manager.loginrequiredtoread");
+        boolean allHaveToLoginBoolean = allHaveToLogin != null && allHaveToLogin.equals("true");
+        if(!allHaveToLoginBoolean) {
+            return true;
+        }
+        
+        HttpSession session = request.getSession(false);
+        if (session == null) {
+            return false;
+        }
+        Object canReadAttribute = session.getAttribute("canRead");
+        if (canReadAttribute == null) {
+            return false;
+        }
+        return canReadAttribute.equals("true");
+
+    }
 }

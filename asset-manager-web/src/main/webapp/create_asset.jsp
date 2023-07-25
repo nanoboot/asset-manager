@@ -58,6 +58,12 @@
     %>
     
     <%
+        if (org.nanoboot.assetmanager.web.misc.utils.Utils.cannotRead(request)) {
+            out.println("Access forbidden");
+            throw new jakarta.servlet.jsp.SkipPageException();
+        }
+    %>
+    <%
         ApplicationContext context = WebApplicationContextUtils.getWebApplicationContext(getServletContext());
         AssetRepo assetRepo = context.getBean("assetRepoImpl", AssetRepo.class);
     %>

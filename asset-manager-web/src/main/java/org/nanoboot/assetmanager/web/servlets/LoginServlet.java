@@ -93,6 +93,7 @@ public class LoginServlet extends HttpServlet {
 
             System.out.println("Created new session " + newSession.toString());
             newSession.setAttribute("canUpdate", "true");
+            newSession.setAttribute("canRead", "true");
             
             System.err.println("canUpdate&& = " + newSession.getAttribute("canUpdate"));
             newSession.setMaxInactiveInterval(6 * 60 * 60);

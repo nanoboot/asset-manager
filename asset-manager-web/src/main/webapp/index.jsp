@@ -37,6 +37,13 @@
         >> <a href="assets.jsp">Assets</a></span>
 
 
+    <%
+        if (org.nanoboot.assetmanager.web.misc.utils.Utils.cannotRead(request)) {
+            out.println("Access forbidden");
+            throw new jakarta.servlet.jsp.SkipPageException();
+        }
+    %>
+    
     <% boolean canUpdate = org.nanoboot.assetmanager.web.misc.utils.Utils.canUpdate(request); %>
 <% if(canUpdate) { %>
 <form action="<%=request.getContextPath()%>/LogoutServlet" method="post" style="display:inline;margin-left:20px;">

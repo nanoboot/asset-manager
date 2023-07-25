@@ -70,6 +70,13 @@
 <% } %>
 
     <%
+        if (org.nanoboot.assetmanager.web.misc.utils.Utils.cannotRead(request)) {
+            out.println("Access forbidden");
+            throw new jakarta.servlet.jsp.SkipPageException();
+        }
+    %>
+    
+    <%
         if (org.nanoboot.assetmanager.web.misc.utils.Utils.cannotUpdate(request)) {
             out.println("Access forbidden");
             throw new jakarta.servlet.jsp.SkipPageException();
