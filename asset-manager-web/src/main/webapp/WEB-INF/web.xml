@@ -64,7 +64,7 @@
 
     <filter>
         <filter-name>CharacterEncodingFilter</filter-name>
-        <filter-class>org.nanoboot.assetmanager.web.misc.filters.CharacterEncodingFilter</filter-class>
+        <filter-class>org.nanoboot.octagon.jakarta.filters.CharacterEncodingFilter</filter-class>
     </filter>
     <filter-mapping>
         <filter-name>CharacterEncodingFilter</filter-name>
