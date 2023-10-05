@@ -27,13 +27,11 @@
 
     <display-name>Asset Manager</display-name>
 
-
-
     <!-- Authentication filter -->
     
     <filter>
         <filter-name>AuthenticationFilter</filter-name>
-        <filter-class>org.nanoboot.assetmanager.web.filters.AuthenticationFilter</filter-class>
+        <filter-class>org.nanoboot.octagon.jakarta.filters.AuthenticationFilter</filter-class>
     </filter>
     <filter-mapping>
         <filter-name>AuthenticationFilter</filter-name>
@@ -79,5 +77,13 @@
             <page-encoding>UTF-8</page-encoding>
         </jsp-property-group>
     </jsp-config>
-
+    
+    <context-param>
+        <param-name>octagon.application-code</param-name>
+        <param-value>asset-manager</param-value>
+    </context-param>
+    
+    <listener>
+        <listener-class>org.nanoboot.octagon.jakarta.listeners.ApplicationCodeListener</listener-class>
+    </listener>
 </web-app>
