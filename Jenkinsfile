@@ -97,7 +97,7 @@ tomcat10test
         		        ;;
     		        esac
 
-                        mv asset-manager-web/target/asset-manager-web-*.war assetmanager.war
+                        mv asset-manager-web/target/asset-manager-web-*.war asset-manager.war
                         
 
                         currentDir=`pwd`&&cd $TOMCAT_HOME/bin
@@ -105,14 +105,14 @@ tomcat10test
                         sudo systemctl stop $systemdService
                         sleep 5
 
-                        if [ -f "$TOMCAT_HOME/webapps/assetmanager.war" ]; then
-                            rm $TOMCAT_HOME/webapps/assetmanager.war
+                        if [ -f "$TOMCAT_HOME/webapps/asset-manager.war" ]; then
+                            rm $TOMCAT_HOME/webapps/asset-manager.war
                         fi
 
-                        if [ -f "$TOMCAT_HOME/webapps/assetmanager" ]; then
-                            rm -r $TOMCAT_HOME/webapps/assetmanager
+                        if [ -f "$TOMCAT_HOME/webapps/asset-manager" ]; then
+                            rm -r $TOMCAT_HOME/webapps/asset-manager
                         fi
-                        mv $currentDir/assetmanager.war $TOMCAT_HOME/webapps
+                        mv $currentDir/asset-manager.war $TOMCAT_HOME/webapps
                         
                         #(
                         #  set -e
