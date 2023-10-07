@@ -17,20 +17,12 @@
 // Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 ///////////////////////////////////////////////////////////////////////////////////////////////
 
+package org.nanoboot.assetmanager.web;
+
 /**
  *
- * @author <a href="mailto:robertvokac@nanoboot.org">Robert Vokac</a>
- * @since 0.0.0
+ * @author robertvokac
  */
-module assetmanager.web {
-    requires assetmanager.entity;
-    requires assetmanager.persistence.api;
-    requires assetmanager.persistence.impl.mock;
-    requires spring.context;
-    requires jakarta.jakartaee.web.api;
-    requires lombok;
-    requires spring.web;
-    requires powerframework.time;
-    requires org.xerial.sqlitejdbc;
-    requires octagon.jakarta;
+public class DummyClass {
+    
 }

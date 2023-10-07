@@ -1,5 +1,5 @@
 <%@page import="org.nanoboot.powerframework.time.moment.LocalDate"%>
-<%@page import="org.nanoboot.assetmanager.web.misc.utils.Utils"%>
+<%@page import="org.nanoboot.octagon.jakarta.utils.OctagonJakartaUtils"%>
 <%@page import="org.nanoboot.assetmanager.persistence.api.AssetRepo"%>
 <%@page import="org.nanoboot.assetmanager.entity.Asset"%>
 <%@page import="org.springframework.web.context.support.WebApplicationContextUtils"%>
@@ -64,14 +64,14 @@
     </span>
 
     <%
-        if (org.nanoboot.assetmanager.web.misc.utils.Utils.cannotRead(request)) {
+        if (org.nanoboot.octagon.jakarta.utils.OctagonJakartaUtils.cannotRead(request)) {
             out.println("Access forbidden");
             throw new jakarta.servlet.jsp.SkipPageException();
         }
     %>
     
     <%
-        if (org.nanoboot.assetmanager.web.misc.utils.Utils.cannotUpdate(request)) {
+        if (org.nanoboot.octagon.jakarta.utils.OctagonJakartaUtils.cannotUpdate(request)) {
             out.println("Access forbidden");
             throw new jakarta.servlet.jsp.SkipPageException();
         }

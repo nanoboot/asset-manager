@@ -4,7 +4,7 @@
 <%@page import="java.io.File"%>
 <%@page import="org.nanoboot.assetmanager.entity.Asset"%>
 <%@page import="org.nanoboot.assetmanager.persistence.api.AssetRepo"%>
-<%@page import="org.nanoboot.assetmanager.web.misc.utils.Utils"%>
+<%@page import="org.nanoboot.octagon.jakarta.utils.OctagonJakartaUtils"%>
 <%@page import="org.springframework.web.context.support.WebApplicationContextUtils"%>
 <%@page import="org.springframework.context.ApplicationContext"%>
 <!DOCTYPE>
@@ -57,7 +57,7 @@
         >> <a href="assets.jsp">Assets</a>
         >> <a href="read_asset.jsp?number=<%=number%>" class="nav_a_current">Read</a>
 
-        <% boolean canUpdate = org.nanoboot.assetmanager.web.misc.utils.Utils.canUpdate(request); %>
+        <% boolean canUpdate = org.nanoboot.octagon.jakarta.utils.OctagonJakartaUtils.canUpdate(request); %>
         <% if(canUpdate) { %>
         <a href="update_asset.jsp?number=<%=number%>">Update</a>
         <a href="upload_asset_image.jsp?number=<%=number%>">Upload image</a>
@@ -68,7 +68,7 @@
 
 
     <%
-        if (org.nanoboot.assetmanager.web.misc.utils.Utils.cannotRead(request)) {
+        if (org.nanoboot.octagon.jakarta.utils.OctagonJakartaUtils.cannotRead(request)) {
             out.println("Access forbidden");
             throw new jakarta.servlet.jsp.SkipPageException();
         }
@@ -134,19 +134,19 @@
 
 
         </tr>
-        <tr><th>Path 1</th><td><%=Utils.formatToHtml(asset.getPath1())%></td></tr>
-        <tr><th>Path 2</th><td><%=Utils.formatToHtml(asset.getPath2())%></td></tr>
-        <tr><th>Path 3</th><td><%=Utils.formatToHtml(asset.getPath3())%></td></tr>
-        <tr><th>Path 4</th><td><%=Utils.formatToHtml(asset.getPath4())%></td></tr>
+        <tr><th>Path 1</th><td><%=OctagonJakartaUtils.formatToHtml(asset.getPath1())%></td></tr>
+        <tr><th>Path 2</th><td><%=OctagonJakartaUtils.formatToHtml(asset.getPath2())%></td></tr>
+        <tr><th>Path 3</th><td><%=OctagonJakartaUtils.formatToHtml(asset.getPath3())%></td></tr>
+        <tr><th>Path 4</th><td><%=OctagonJakartaUtils.formatToHtml(asset.getPath4())%></td></tr>
         
         <tr><th>Name</th><td><%=asset.getName()%></td></tr>
-        <tr><th>Alias</th><td><%=Utils.formatToHtml(asset.getAlias())%></td></tr>
-        <tr><th>Since</th><td><%=Utils.formatToHtml(asset.getSince())%></td></tr>
-        <tr><th>Price</th><td><%=Utils.formatToHtml(asset.getPrettyPrice())%></td></tr>
+        <tr><th>Alias</th><td><%=OctagonJakartaUtils.formatToHtml(asset.getAlias())%></td></tr>
+        <tr><th>Since</th><td><%=OctagonJakartaUtils.formatToHtml(asset.getSince())%></td></tr>
+        <tr><th>Price</th><td><%=OctagonJakartaUtils.formatToHtml(asset.getPrettyPrice())%></td></tr>
         
-        <tr><th>Note</th><td><%=Utils.formatToHtml(asset.getNote())%></td></tr>
-        <tr><th>Group</th><td><%=Utils.formatToHtml(asset.getGroup())%></td></tr>
-        <tr><th>Added on</th><td><%=Utils.formatToHtml(asset.getAddedOn())%></td></tr>
+        <tr><th>Note</th><td><%=OctagonJakartaUtils.formatToHtml(asset.getNote())%></td></tr>
+        <tr><th>Group</th><td><%=OctagonJakartaUtils.formatToHtml(asset.getGroup())%></td></tr>
+        <tr><th>Added on</th><td><%=OctagonJakartaUtils.formatToHtml(asset.getAddedOn())%></td></tr>
         
     </table>
 

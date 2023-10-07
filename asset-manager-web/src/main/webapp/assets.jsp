@@ -1,4 +1,3 @@
-<%@page import="org.nanoboot.assetmanager.web.misc.utils.Utils"%>
 <%@page import="org.nanoboot.assetmanager.entity.Asset"%>
 <%@page import="org.nanoboot.assetmanager.persistence.api.AssetRepo"%>
 <%@page import="java.util.List"%>
@@ -43,7 +42,7 @@
         
         
                 
-            <% boolean canUpdate = org.nanoboot.assetmanager.web.misc.utils.Utils.canUpdate(request); %>
+            <% boolean canUpdate = org.nanoboot.octagon.jakarta.utils.OctagonJakartaUtils.canUpdate(request); %>
 <% if(canUpdate) { %>
 >> <a href="create_asset.jsp">Add Asset</a>
 <% } %>
@@ -51,7 +50,7 @@
     </span>
 
     <%
-        if (org.nanoboot.assetmanager.web.misc.utils.Utils.cannotRead(request)) {
+        if (org.nanoboot.octagon.jakarta.utils.OctagonJakartaUtils.cannotRead(request)) {
             out.println("Access forbidden");
             throw new jakarta.servlet.jsp.SkipPageException();
         }
@@ -183,16 +182,16 @@
             </td>
 
             <td>
-                <%=Utils.formatToHtml(v.getPath1())%>
+                <%=OctagonJakartaUtils.formatToHtml(v.getPath1())%>
             </td>
             <td>
-                <%=Utils.formatToHtml(v.getPath2())%>
+                <%=OctagonJakartaUtils.formatToHtml(v.getPath2())%>
             </td>
             <td>
-                <%=Utils.formatToHtml(v.getPath3())%>
+                <%=OctagonJakartaUtils.formatToHtml(v.getPath3())%>
             </td>
             <td>
-                <%=Utils.formatToHtml(v.getPath4())%>
+                <%=OctagonJakartaUtils.formatToHtml(v.getPath4())%>
             </td>
             
             
@@ -201,21 +200,21 @@
             </td>
             
             <td>
-                <%=Utils.formatToHtml(v.getAlias())%>
+                <%=OctagonJakartaUtils.formatToHtml(v.getAlias())%>
             </td>
             <td>
-                <%=Utils.formatToHtml(v.getSince())%>
+                <%=OctagonJakartaUtils.formatToHtml(v.getSince())%>
             </td>
             <td>
-              <%=Utils.formatToHtml(v.getPrettyPrice())%> 
+              <%=OctagonJakartaUtils.formatToHtml(v.getPrettyPrice())%> 
             </td>
             
             
             <td>
-                <%=Utils.formatToHtml(v.getNote())%>
+                <%=OctagonJakartaUtils.formatToHtml(v.getNote())%>
             </td>
             <td>
-                <%=Utils.formatToHtml(v.getGroup())%>
+                <%=OctagonJakartaUtils.formatToHtml(v.getGroup())%>
             </td>
             <td>
                 <%=v.getAddedOn()== null ? EMPTY :v.getAddedOn().toString()%>

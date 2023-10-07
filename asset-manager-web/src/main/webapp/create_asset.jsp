@@ -51,14 +51,14 @@
         >> <a href="create_asset.jsp" class="nav_a_current">Add Asset</a></span>
 
     <%
-        if (org.nanoboot.assetmanager.web.misc.utils.Utils.cannotUpdate(request)) {
+        if (org.nanoboot.octagon.jakarta.utils.OctagonJakartaUtils.cannotUpdate(request)) {
             out.println("Access forbidden");
             throw new jakarta.servlet.jsp.SkipPageException();
         }
     %>
     
     <%
-        if (org.nanoboot.assetmanager.web.misc.utils.Utils.cannotRead(request)) {
+        if (org.nanoboot.octagon.jakarta.utils.OctagonJakartaUtils.cannotRead(request)) {
             out.println("Access forbidden");
             throw new jakarta.servlet.jsp.SkipPageException();
         }
